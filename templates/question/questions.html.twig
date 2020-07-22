@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questions - {{ parent() }} {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-12">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                {% if is_granted('ROLE_MODERATOR') %}
+                    <th scope="col">Utilisateur</th>
+                {% endif %}
+                <th scope="col">Question</th>
+                <th scope="col">Edition</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+                {% if (question.restricted != true) or is_granted('ROLE_MODERATOR') %}
+                    {% if (question.user.id == app.user.id) or (is_granted('ROLE_MODERATOR')) %}
+                    <tr class="{% if (question.restricted == true) %} locked {% endif %}">
+                        {% if is_granted('ROLE_MODERATOR') %}
+                            <th scope="row">
+                                {{ question.user.username }}
+                            </th>
+                        {% endif %}
+                        <th scope="row">
+                            <a href="{{ path('questions_show_single', {'id': question.id}) }}">
+                                {{ question.title }}
+                            </a>
+                        </th>
+                        <td>
+                            <a href="{{ path('questions_edit', {'id': question.id}) }}" role="button" class="btn btn-dark">
+                                Editer
+                            </a>
+                            <a href="{{ path('questions_edit_status', {'id': question.id}) }}" role="button" class="btn btn-dark" d>
+                                {% if (question.status == false) %} Fermer {% else %} Ouvrir {% endif %}
+                            </a>
+                            <a href="{{ path('questions_delete', {'id': question.id}) }}" role="button" class="btn btn-dark">
+                                Supprimer
+                            </a>
+                            {% if is_granted('ROLE_MODERATOR') %}
+                                <a href="{{ path('questions_edit_restrict', {'id': question.id}) }}" role="button" class="btn btn-dark">
+                                    {% if (question.restricted == false) %} Bloquer {% else %} Débloquer {% endif %}
+                                </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+</div>
+{% endblock %}

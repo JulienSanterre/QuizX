@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de Tags - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formAddTag, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputTagName">Nom</label>
+                {{ form_widget(formAddTag.name, { attr: {
+                    autofocus: true,
+                    id: "inputTagName",
+                    class: "form-control"
+                }}) }}
+
+                {{ form_widget(formAddTag.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formAddTag) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}

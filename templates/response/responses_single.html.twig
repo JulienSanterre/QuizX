@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réponse - {{ responses.content }} - {{ parent() }} {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-12">
+        {% if (responses.status != true) or (is_granted('ROLE_MODERATOR')) %}
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        {% if is_granted('ROLE_MODERATOR') %}
+                            <th scope="col">Utilisateur</th>
+                        {% endif %}
+                        <th scope="col">Réponse</th>
+                        <th scope="col">Edition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="{% if (responses.status == true) %} locked {% endif %}">
+                        {% if (responses.user.id == app.user.id) or (is_granted('ROLE_MODERATOR')) %}
+                            {% if is_granted('ROLE_MODERATOR') %}
+                                <th scope="row">
+                                    {{ responses.user.username }}
+                                </th>
+                            {% endif %}
+                            <th scope="row">
+                                {{ responses.content }}
+                            </th>
+                            <td>
+                                <a href="{{ path('responses_edit', {'id': responses.id}) }}" role="button" class="btn btn-dark">
+                                    Editer
+                                </a>
+                                {% if (responses.question.user.id == app.user.id) or (is_granted('ROLE_MODERATOR')) %}
+                                    <a href="{{ path('responses_edit_isBest', {'id': responses.id}) }}" role="button" class="btn btn-dark" d>
+                                        Meilleur Réponse
+                                    </a>
+                                {% endif %}
+                                <a href="{{ path('responses_delete', {'id': responses.id}) }}" role="button" class="btn btn-dark">
+                                    Supprimer
+                                </a>
+                                {% if is_granted('ROLE_MODERATOR') %}
+                                    <a href="{{ path('responses_edit_status', {'id': responses.id}) }}" role="button" class="btn btn-dark">
+                                        {% if (responses.status == false) %} Bloquer {% else %} Débloquer {% endif %}
+                                    </a>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+                    </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <div<i class="fa fa-lock locked" aria-hidden="true"><p> Réponse Bloquée</p></i></div>
+        {% endif %}
+    </div>
+    <a href="{{ path('responses_show') }}" class="previous-link col-12 text-center">Liste des responses</a>
+</div>
+{% endblock %}

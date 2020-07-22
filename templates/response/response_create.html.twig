@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de Réponses - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formCreateResponse, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputContent">Votre réponse</label>
+                {{ form_widget(formCreateResponse.content, { attr: {
+                    autofocus: true,
+                    id: "inputContent",
+                    class: "form-control"
+                }}) }}
+
+                {{ form_widget(formCreateResponse.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formCreateResponse) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}

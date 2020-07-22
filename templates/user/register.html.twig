@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'enregistrer{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formRegister, { attr: { class: 'log-form col-4'}}) }}
+                {% if app.user %}
+                    <div class="mb-3">
+                        Vous êtes a présent enregistré
+                        {{ app.user.username }}
+                    </div>
+                {% endif %}
+
+                <label for="inputUsername">Utilisateur</label>
+                {{ form_widget(formRegister.username, { attr: {
+                    placeholder: 'Nom d\'utilisateur',
+                    autofocus: true,
+                    id: "inputUsername",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputPassword">Mot de passe</label>
+                {{ form_widget(formRegister.password.first, { attr: {
+                    placeholder: 'Mot de passe',
+                    autofocus: true,
+                    id: "inputPassword",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputRepeat_Password">Vérification du mot de passe</label>
+                {{ form_widget(formRegister.password.second, { attr: {
+                    placeholder: 'Vérification du mot de passe',
+                    autofocus: true,
+                    id: "inputRepeat_Password",
+                    class: "form-control"
+                }}) }}
+
+                {{ form_widget(formRegister.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formRegister) }}
+        </div>
+    </div>
+{% endblock %}

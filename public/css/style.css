@@ -1,0 +1,317 @@
+body {
+    background-image:url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.pageTitle{
+    font-family: 'Lemon', cursive;
+    text-align: center;
+    margin : 1em;
+    font-size : 3em;
+    color : white; 
+    text-shadow : 0px 0px 2px blue;
+}
+
+a{
+    line-height: 2em;
+    color : white;
+    text-shadow : 0px 0px 2px black;
+}
+
+a:hover{
+    color : white !important;
+    text-shadow : 0px 0px 2px black;
+}
+
+/* Previous page link */
+
+.previous-link {
+    position : fixed;
+    bottom: 0;
+    display : block;
+    background-image:url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+    border-top : 1px solid white;
+    z-index : 200;
+}
+
+.nav-tags-bot{
+    position : fixed;
+    width:100%;
+    bottom: 0;
+    background-image:url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+    border-top : 1px solid white;
+    z-index : 200;
+}
+
+.nav-tags-bot > div > a{
+    text-decoration: none;
+    padding: 1vh;
+    line-height: 1.7em;
+}
+
+.nav-tags-bot > div > a:hover{
+    background : white;
+    color : black !important;
+}
+
+.previous-link:hover {
+    border-top : 1px solid rgba(255, 255, 255, 0.658);
+}
+
+/* CONTAINER BOOTSTRAPP RESET */
+
+.container {
+    margin: auto;
+    padding: 0;
+}
+
+
+/* TABLES */
+
+thead{
+    background-color: black;
+    border-bottom: 1px solid white;
+}
+
+.dropdown-item{
+    color : white;
+    text-shadow : 0px 0px 2px black;
+}
+
+.dropdown-item:hover{
+    color: black !important;
+    text-shadow : 0px 0px 2px rgba(0, 0, 255, 0.096);
+    text-decoration: none;
+}
+
+.dropdown-menu{
+    background-image:url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: white;
+}
+
+th:hover{
+    text-shadow : 5px solid black;
+    text-decoration: none;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th{
+    text-align: center;
+}
+
+.table-dark{
+    box-shadow: 0px 0px 2px white;
+    border-radius : 5px;
+    margin-bottom: 0;
+}
+
+tr:hover{
+    background-color : rgba(0, 0, 255, 0.404);
+    text-shadow : none;
+    text-decoration: none;
+}
+
+.tag-header{
+    margin-bottom: 100px!important;
+}
+
+.tag-header-first{
+    margin: 100px!important;
+}
+
+/*CARD */ 
+
+.text-center{
+    margin:auto;
+}
+
+.card{
+    padding : 0;
+    min-height : 100%;
+    margin : 0.5vh auto;
+}
+
+.card-img-bottom {
+    min-height: 800px;
+    background-size: cover;
+}
+
+.top-card-title{
+    background-image:url(../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg);
+    background-size:cover;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding : 20px;
+    font-family: 'Lemon', cursive;
+    font-size: 4em;
+    color : white !important;
+    text-shadow : 0 0 1px black!important;
+}
+
+.card-title {
+    color: rgb(23, 23, 23);
+    text-shadow: 0px 0px 1px white;
+}
+
+.card-title > a{
+    color: black;
+}
+
+.spacing-subtitle{
+    font-family: 'Lemon', cursive;
+    color: rgb(23, 23, 23);
+    text-shadow: 0px 0px 1px white;
+    font-size: 1.4em;
+    margin : 30px 0;
+}
+
+.movie-single-card{
+    background-color: unset;
+    border : 1px solid rgba(0, 0, 0, 0.562);
+}
+
+/** CARD SINGLE MOVIE **/
+
+.card-block-single-movie{
+    margin: auto;
+}
+
+.card-body-2{
+    border-top: 1px solid rgba(5, 3, 129, 0.253);
+    padding: 2em 0 1em;
+}
+
+/** PICTURE MOVIE SINGLE **/
+
+.left-single-movie{
+    padding-top : 4em;
+    min-height: 100vh;
+    background-color : rgba(255, 255, 255, 0.788);
+    border-right: 1px solid black;
+}
+
+.single-movie-picture{
+    position : fixed;
+    top: 6em;
+}
+
+.single-movie-picture > img{
+    position : center;
+    background-repeat: no-repeat!important;
+    margin : 0;
+    padding: 0;
+    border : 1px solid rgb(255, 255, 255);
+}
+
+/** BADGES **/
+
+.badge{
+    padding: 10px;
+    margin-bottom : 20px;
+}
+
+/* VIDEO */
+
+video{
+    width: 100%;
+    position: fixed;
+    top: -100;
+    left: 0;
+    z-index: 0;
+}
+
+/* NAV */
+
+nav{
+    height : 80px;
+    background-image:url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+    position: fixed!important;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid white;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    opacity: 1 ;
+    background : rgba(0, 16, 110, 0.521);
+}
+
+.dropdown-item.active:hover, .dropdown-item:active:hover{
+    opacity: 1 ;
+    background : rgba(255, 255, 255, 0.521);
+}
+
+/* FIX FOR FIXED ELEMENTS */
+
+.nav-spacer{
+    margin-bottom: 80px;
+}
+
+.container{
+    margin-bottom: 20px;
+}
+
+.log-btn{
+    float : right;
+}
+
+/* FORMULAIRE DE CONNECTION */
+
+.log-form{
+    margin : 25vh auto;
+    border-radius : 1em;
+    padding : 1em 2em;
+    background-color: rgba(0, 0, 0, 0.658); 
+    border : 1px solid white;
+    color : white;
+
+}
+
+.log-form > label {
+    padding-top : 1em;   
+}
+
+.log-form-btn{
+    margin-top : 1em;
+}
+
+.register-btn{
+    position : absolute;
+    margin : 5vh 100vh;
+    z-index: 1000;
+}
+
+/* FORMULAIRE GESTION UTILISATEUR */
+
+.form-check-input{
+    position : unset;
+}
+
+/* OTHERS */
+
+.btn-dark{
+    background-image : url("../img/bigstock-Abstract-Molecule-on-dark-blue-99319754.jpg");
+    opacity: 0.8 ;
+}
+
+.btn-dark:hover{
+    opacity: 1 ;
+    background : rgba(0, 16, 110, 0.521);
+}
+
+.form-check-input > input, .form-check-input > label{
+    margin-left : 2em;
+}
+
+.best-answer{
+    background : rgba(0, 128, 0, 0.356);
+}
+
+.locked{
+    background : rgba(255, 0, 0, 0.397);
+}

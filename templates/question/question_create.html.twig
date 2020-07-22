@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de Questions - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formCreateQuestion, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputTitle">Titre</label>
+                {{ form_widget(formCreateQuestion.title, { attr: {
+                    autofocus: true,
+                    id: "inputTitle",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputContent">Votre question</label>
+                {{ form_widget(formCreateQuestion.content, { attr: {
+                    autofocus: true,
+                    id: "inputContent",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputTags">Tags</label>
+                {{ form_widget(formCreateQuestion.tags, { attr: {
+                    autofocus: true,
+                    id: "inputTags",
+                    class: "form-check-input"
+                }}) }}
+
+                {{ form_widget(formCreateQuestion.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formCreateQuestion) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}

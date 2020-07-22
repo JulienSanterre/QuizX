@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification des privilèges - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formEditUser, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputUsername">Utilisateur</label>
+                {{ form_widget(formEditUser.username, { attr: {
+                    disabled: true,
+                    autofocus: true,
+                    id: "inputUsername",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputRoles">Séléction des privilèges</label>
+                {{ form_widget(formEditUser.roles, { attr: {
+                    autofocus: true,
+                    id: "inputRoles",
+                    class: "form-check-input"
+                }}) }}
+
+                {{ form_widget(formEditUser.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formEditUser) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}

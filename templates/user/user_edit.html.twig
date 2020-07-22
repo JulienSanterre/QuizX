@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Profil - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formEditUser, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputUsername">Nom d'utilisateur</label>
+                {{ form_widget(formEditUser.username, { attr: {
+                    autofocus: true,
+                    id: "inputUsername",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputMail">Votre Email</label>
+                {{ form_widget(formEditUser.mail, { attr: {
+                    type : 'email',
+                    autofocus: true,
+                    id: "inputMail",
+                    class: "form-control"
+                }}) }}
+
+                {{ form_widget(formEditUser.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formEditUser) }}
+        </div>
+    </div>
+{% endblock %}

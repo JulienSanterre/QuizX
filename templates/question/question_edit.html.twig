@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition de Questions- {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formEditQuestion, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputTitle">Titre</label>
+                {{ form_widget(formEditQuestion.title, { attr: {
+                    autofocus: true,
+                    id: "inputTitle",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputContent">Votre question</label>
+                {{ form_widget(formEditQuestion.content, { attr: {
+                    autofocus: true,
+                    id: "inputContent",
+                    class: "form-control"
+                }}) }}
+
+                <label for="inputTags">Tags</label>
+                {{ form_widget(formEditQuestion.tags, { attr: {
+                    autofocus: true,
+                    id: "inputTags",
+                    class: "form-check-input"
+                }}) }}
+
+                {{ form_widget(formEditQuestion.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formEditQuestion) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}

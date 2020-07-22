@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition de Tags - {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container col-12">
+        <div class="row col-12">
+            {{ form_start(formEditTag, { attr: { class: 'log-form col-4'}}) }}
+
+                <label for="inputTagName">Nom</label>
+                {{ form_widget(formEditTag.name, { attr: {
+                    autofocus: true,
+                    id: "inputTagName",
+                    class: "form-control"
+                }}) }}
+
+                {{ form_widget(formEditTag.send, { attr: {
+                    class: "btn btn-lg btn-dark log-form-btn col-12"
+                }}) }}
+            {{ form_end(formEditTag) }}
+        </div>
+        <a href="{{ path('home') }}" class="previous-link col-12 text-center">Retour a l'acceuil</a>
+    </div>
+{% endblock %}
